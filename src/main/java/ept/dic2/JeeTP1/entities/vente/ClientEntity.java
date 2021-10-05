@@ -2,70 +2,19 @@ package ept.dic2.JeeTP1.entities.vente;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "client", schema = "vente", catalog = "")
-public class ClientEntity {
-    private int id;
-    private String prenom;
-    private String nom;
-    private String telephone;
-    private String email;
+public class ClientEntity extends Personne {
+
     private String adresse;
     private String ville;
     private String etat;
     private String codeZip;
     private Collection<CommandeEntity> commandesById;
 
-    @Id
-    @Column(name = "ID", nullable = false)
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Basic
-    @Column(name = "PRENOM", nullable = false, length = 255)
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    @Basic
-    @Column(name = "NOM", nullable = false, length = 255)
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    @Basic
-    @Column(name = "TELEPHONE", nullable = true, length = 25)
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    @Basic
-    @Column(name = "EMAIL", nullable = false, length = 255)
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     @Basic
     @Column(name = "ADRESSE", nullable = true, length = 255)
@@ -107,40 +56,6 @@ public class ClientEntity {
         this.codeZip = codeZip;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ClientEntity that = (ClientEntity) o;
-
-        if (id != that.id) return false;
-        if (prenom != null ? !prenom.equals(that.prenom) : that.prenom != null) return false;
-        if (nom != null ? !nom.equals(that.nom) : that.nom != null) return false;
-        if (telephone != null ? !telephone.equals(that.telephone) : that.telephone != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (adresse != null ? !adresse.equals(that.adresse) : that.adresse != null) return false;
-        if (ville != null ? !ville.equals(that.ville) : that.ville != null) return false;
-        if (etat != null ? !etat.equals(that.etat) : that.etat != null) return false;
-        if (codeZip != null ? !codeZip.equals(that.codeZip) : that.codeZip != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (prenom != null ? prenom.hashCode() : 0);
-        result = 31 * result + (nom != null ? nom.hashCode() : 0);
-        result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (adresse != null ? adresse.hashCode() : 0);
-        result = 31 * result + (ville != null ? ville.hashCode() : 0);
-        result = 31 * result + (etat != null ? etat.hashCode() : 0);
-        result = 31 * result + (codeZip != null ? codeZip.hashCode() : 0);
-        return result;
-    }
-
     @OneToMany(mappedBy = "clientByClientId")
     public Collection<CommandeEntity> getCommandesById() {
         return commandesById;
@@ -148,5 +63,29 @@ public class ClientEntity {
 
     public void setCommandesById(Collection<CommandeEntity> commandesById) {
         this.commandesById = commandesById;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ClientEntity)) return false;
+        if (!super.equals(o)) return false;
+        ClientEntity that = (ClientEntity) o;
+        return adresse.equals(that.adresse) && ville.equals(that.ville) && etat.equals(that.etat) && codeZip.equals(that.codeZip) && commandesById.equals(that.commandesById);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), adresse, ville, etat, codeZip, commandesById);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "ClientEntity{" +
+                "adresse='" + adresse + '\'' +
+                ", ville='" + ville + '\'' +
+                ", etat='" + etat + '\'' +
+                ", codeZip='" + codeZip + '\'' +
+                '}';
     }
 }
