@@ -1,0 +1,10 @@
+.settings/
+target
+target/*
+*.D_Store
+.project
+bin/
+.classpath
+lib
+.idea
+JeeTP1.iml

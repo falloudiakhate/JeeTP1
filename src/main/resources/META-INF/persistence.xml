@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="JeeTP1Pu1">
+
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:/VenteDS</jta-data-source>
+
+        <class>ept.dic2.JeeTP1.entities.vente.ArticleCommandeEntity</class>
+        <class>ept.dic2.JeeTP1.entities.vente.ClientEntity</class>
+        <class>ept.dic2.JeeTP1.entities.vente.CommandeEntity</class>
+        <class>ept.dic2.JeeTP1.entities.vente.EmployeEntity</class>
+        <class>ept.dic2.JeeTP1.entities.vente.MagasinEntity</class>
+
+        <properties>
+            <property name="connection.autoReconnect" value="true"/>
+            <property name="connection.autoReconnectForPools" value="true"/>
+            <property name="connection.is-connection-validation-required" value="true"/>
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
+            <property name="hibernate.connection.characterEncoding" value="utf8" />
+            <property name="hibernate.connection.useUnicode" value="true" />
+            <property name="hibernate.connection.charSet" value="UTF-8" />
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="JeeTP1Pu2">
+
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:/productionDS</jta-data-source>
+
+        <class>ept.dic2.JeeTP1.entities.production.CategorieEntity</class>
+        <class>ept.dic2.JeeTP1.entities.production.MarqueEntity</class>
+        <class>ept.dic2.JeeTP1.entities.production.ProduitEntity</class>
+        <class>ept.dic2.JeeTP1.entities.production.StockEntity</class>
+
+        <properties>
+
+            <property name="connection.autoReconnect" value="true"/>
+            <property name="connection.autoReconnectForPools" value="true"/>
+            <property name="connection.is-connection-validation-required" value="true"/>
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
+            <property name="hibernate.connection.characterEncoding" value="utf8" />
+            <property name="hibernate.connection.useUnicode" value="true" />
+            <property name="hibernate.connection.charSet" value="UTF-8" />
+
+        </properties>
+    </persistence-unit>
+
+</persistence>
