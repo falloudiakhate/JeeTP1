@@ -8,21 +8,19 @@ import java.util.Objects;
 @Table(name = "client", schema = "vente", catalog = "")
 public class ClientEntity extends Personne {
 
-    private String adresse;
+    @Embedded
+    private Adresse adresse;
+
     private String ville;
     private String etat;
     private String codeZip;
     private Collection<CommandeEntity> commandesById;
 
-
-
-    @Basic
-    @Column(name = "ADRESSE", nullable = true, length = 255)
-    public String getAdresse() {
+    public Adresse getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
+    public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
 

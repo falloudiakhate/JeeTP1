@@ -10,7 +10,10 @@ public class MagasinEntity {
     private String nom;
     private String telephone;
     private String email;
-    private String adresse;
+
+    @Embedded
+    private Adresse adresse;
+
     private String ville;
     private String etat;
     private String codeZip;
@@ -57,13 +60,11 @@ public class MagasinEntity {
         this.email = email;
     }
 
-    @Basic
-    @Column(name = "ADRESSE", nullable = true, length = 255)
-    public String getAdresse() {
+    public Adresse getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
+    public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
 
