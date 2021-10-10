@@ -14,7 +14,7 @@ Ligne de commande Linux : `source db.sql;`
 
 ### 2) Créer un projet web NetBeans qui utilise une des bases de données précédentes (production ou vente) dans sa configuration JPA (ne pas mettre de stratégie pour la génération de la base de données)
 
-Fait avec IntelliJ IDEA Ultimate Edition
+Fait avec `IntelliJ IDEA Ultimate Edition`
 
 ### 3) Générer les entités à partir de l’outils NetBeans Create « Entity Classes from Database ». Créer un `EJB Singleton` (qui est créé au démarrage) avec une méthode `init` ayant l’annotation `@ PostConstruct` qui affiche `dans les logs` la liste des `employés` et la liste des `produits`
 
@@ -42,7 +42,7 @@ Check le Commit  `Question 1 - 2 - 3 / OK `  pour la création du  `EJB Singleto
 
 ------------------------------------------------
 
-> Le nouveau Schema 'APRES' les modifications 
+> Le nouveau Schema `APRES` les modifications 
 
 ![Image](https://i.imgur.com/xSIptsg.png)
 
