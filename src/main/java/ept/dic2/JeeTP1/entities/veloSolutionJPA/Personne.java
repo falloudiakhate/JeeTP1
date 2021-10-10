@@ -1,15 +1,11 @@
 package ept.dic2.JeeTP1.entities.veloSolutionJPA;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @MappedSuperclass
 public class Personne implements Serializable {
 
-    private int id;
     private String nom;
     private String prenom;
     private String telephone;
@@ -18,15 +14,6 @@ public class Personne implements Serializable {
     @Embedded
     private Adresse adresse;
 
-    @Basic
-    @Column(name = "ID", nullable = true, length = 50)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     @Basic
     @Column(name = "nom", nullable = true, length = 50)
@@ -79,7 +66,6 @@ public class Personne implements Serializable {
     @Override
     public String toString() {
         return "Personne{" +
-                "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", telephone='" + telephone + '\'' +

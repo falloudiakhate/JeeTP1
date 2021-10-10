@@ -53,6 +53,10 @@ public class LigneCommande implements Serializable {
         this.commande = commande;
     }
 
+    public void setVelo(Velo velo) {
+        this.velo = velo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

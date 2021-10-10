@@ -2,7 +2,6 @@ package ept.dic2.JeeTP1.entities.veloSolutionJPA;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -57,27 +56,4 @@ public class User extends Personne {
         this.roles = roles;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return actived == user.actived && idUser.equals(user.idUser) && userName.equals(user.userName) && password.equals(user.password) && roles.equals(user.roles);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idUser, userName, password, actived, roles);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "idUser=" + idUser +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", actived=" + actived +
-                ", roles=" + roles +
-                '}';
-    }
 }

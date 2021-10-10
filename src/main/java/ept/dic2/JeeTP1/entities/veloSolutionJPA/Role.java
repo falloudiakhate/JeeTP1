@@ -13,6 +13,8 @@ public class Role implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idRole;
     private String roleName;
+
+
     public Long getIdRole() {
         return idRole;
     }
