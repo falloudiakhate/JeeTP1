@@ -76,6 +76,6 @@ Proposer une nouvelle solution JPA pour une nouvelle Base de données
 
 ------------------------------------------------
 
-Check le Commit  `Partie II / OK `  pour voir les modifcations
+Check le Commit  `Partie II / OK / Refactoring`  pour voir les modifcations
 
 -----------------------------------------------
