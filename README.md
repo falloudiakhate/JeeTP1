@@ -1,8 +1,9 @@
+## ` Auteur : Fallou DIAKHATE EPT - DIC2 - 2021`
+
 # Travaux Pratique : Java Persistence API
 
 ## Partie I : Création d’entités à partir d’une base de données existante
 
-## ` Auteur : Fallou DIAKHATE EPT - DIC2 - 2021`
 ### 1) Créer les bases de données production et vente à partir du fichier backup.
 Ligne de commande Linux : `source db.sql;`
 
